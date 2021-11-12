@@ -48,10 +48,10 @@ enum custom_keycodes {
 };
 
 enum tap_dance_codes {
-  DANCE_0,
-  DANCE_1,
-  DANCE_2,
-  DANCE_3,
+    DANCE_MOUSE0,
+    DANCE_FN0,
+    DANCE_FN1,
+    DANCE_MOUSE1,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           LALT_T(KC_EQUAL),                                LALT_T(KC_MINUS),KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLASH,
     LCTL_T(KC_GRAVE),KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCOLON,      RCTL_T(KC_QUOTE),
     KC_LSHIFT,      KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           KC_LBRACKET,                                    KC_RBRACKET,    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RSHIFT,
-    MO(4),          KC_TRANSPARENT, KC_TRANSPARENT, TD(DANCE_0),    TD(DANCE_1),                                                                                                    TD(DANCE_2),    TD(DANCE_3),    MO(3),          KC_TRANSPARENT, MO(4),
+    MO(4),          KC_TRANSPARENT, KC_TRANSPARENT, TD(DANCE_MOUSE0),TD(DANCE_FN0),                                                                                                  TD(DANCE_FN1),    TD(DANCE_MOUSE1),    MO(3),          KC_TRANSPARENT, MO(4),
                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                     LGUI_T(KC_SPACE),KC_BSPACE,      KC_TRANSPARENT, KC_TRANSPARENT, KC_DELETE,      LGUI_T(KC_ENTER)
@@ -258,9 +258,9 @@ void dance_3_reset(qk_tap_dance_state_t *state, void *user_data) {
 }
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-        [DANCE_0] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_0_finished, dance_0_reset),
-        [DANCE_1] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_1_finished, dance_1_reset),
-        [DANCE_2] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_2_finished, dance_2_reset),
-        [DANCE_3] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_3_finished, dance_3_reset),
+        [DANCE_MOUSE0] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_0_finished, dance_0_reset),
+        [DANCE_FN0] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_1_finished, dance_1_reset),
+        [DANCE_FN1] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_2_finished, dance_2_reset),
+        [DANCE_MOUSE1] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_3_finished, dance_3_reset),
 };
 
