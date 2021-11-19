@@ -18,6 +18,7 @@ enum layer_names {
 #define WEB_CTB LALT(KC_W)
 
 #define SPC_FUN LT(LAYER_FUNC, KC_SPC)
+#define ENT_FUN LT(LAYER_FUNC, KC_ENTER)
 #define BCK_MOU LT(LAYER_MOUSE, KC_BSPC)
 #define MO_MEDA MO(LAYER_MEDIA)
 
@@ -34,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, MOD_ALT, MOD_WIN, MOD_CTL,                                        MOD_CTL, MOD_WIN, MOD_ALT, _______, _______,
                                                  _______, _______,    _______, _______,
                                                           _______,    _______,
-                                        SPC_FUN, BCK_MOU, _______,    _______, KC_DEL,  KC_ENTER
+                                        SPC_FUN, BCK_MOU, _______,    _______, KC_DEL,  ENT_FUN
   ),
   [LAYER_FUNC] = LAYOUT_ergodox_pretty(
     KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,    _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_ESC,
